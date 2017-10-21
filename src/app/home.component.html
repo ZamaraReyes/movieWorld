@@ -1,0 +1,140 @@
+<header>
+    <carousel>
+        <slide>
+            <div *ngFor="let coming of filmsComing; let i = index">
+                <div *ngIf="i < 1">
+                    <div class="titulocabecera">
+                        <h1>{{coming.title}}</h1>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <p>{{coming.vote_average}}</p>
+                        <p>|</p>
+                        <i class="fa fa-video-camera" aria-hidden="true"></i>
+                        <p>{{coming.genres}}</p>
+                        <p class="sipnosiscabecera">{{coming.overview}}</p>
+                        <a class="boton" (click)="moviedetail(coming.imdb_id)"><p>Watch trailer</p></a>
+                    </div>
+                    <div class="cabeceraslider" [style.background-image]="'url(' + coming.backdrop_path + ')'">
+                        <div id="grad2"></div>
+                    </div>
+                </div>    
+            </div>
+        </slide>
+        <slide>
+            <div *ngFor="let coming of filmsComing | slice:1:2 ; let i = index">
+                <div *ngIf="i < 2">
+                    <div class="titulocabecera">
+                        <h1>{{coming.title}}</h1>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <p>{{coming.vote_average}}</p>
+                        <p>|</p>
+                        <i class="fa fa-video-camera" aria-hidden="true"></i>
+                        <p>{{coming.genres}}</p>
+                        <p class="sipnosiscabecera">{{coming.overview}}</p>
+                        <a class="boton" (click)="moviedetail(coming.imdb_id)"><p>Watch trailer</p></a>
+                    </div>
+                    <div class="cabeceraslider" [style.background-image]="'url(' + coming.backdrop_path + ')'">
+                        <div id="grad2"></div>
+                    </div>
+                </div>    
+            </div>
+        </slide>
+        <slide>
+            <div *ngFor="let coming of filmsComing | slice:2:3 ; let i = index">
+                <div *ngIf="i < 3">
+                    <div class="titulocabecera">
+                        <h1>{{coming.title}}</h1>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <p>{{coming.vote_average}}</p>
+                        <p>|</p>
+                        <i class="fa fa-video-camera" aria-hidden="true"></i>
+                        <p>{{coming.genres}}</p>
+                        <p class="sipnosiscabecera">{{coming.overview}}</p>
+                        <a class="boton" (click)="moviedetail(coming.imdb_id)"><p>Watch trailer</p></a>
+                    </div>
+                    <div class="cabeceraslider" [style.background-image]="'url(' + coming.backdrop_path + ')'">
+                        <div id="grad2"></div>
+                    </div>
+                </div>    
+            </div>
+        </slide>
+        <slide>
+            <div *ngFor="let coming of filmsComing | slice:3:4 ; let i = index">
+                <div *ngIf="i < 4">
+                    <div class="titulocabecera">
+                        <h1>{{coming.title}}</h1>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <p>{{coming.vote_average}}</p>
+                        <p>|</p>
+                        <i class="fa fa-video-camera" aria-hidden="true"></i>
+                        <p>{{coming.genres}}</p>
+                        <p class="sipnosiscabecera">{{coming.overview}}</p>
+                        <a class="boton" (click)="moviedetail(coming.imdb_id)"><p>Watch trailer</p></a>
+                    </div>
+                    <div class="cabeceraslider" [style.background-image]="'url(' + coming.backdrop_path + ')'">
+                        <div id="grad2"></div>
+                    </div>
+                </div>    
+            </div>
+        </slide>
+        <slide>
+            <div *ngFor="let coming of filmsComing | slice:4:5 ; let i = index">
+                <div *ngIf="i < 5">
+                    <div class="titulocabecera">
+                        <h1>{{coming.title}}</h1>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <p>{{coming.vote_average}}</p>
+                        <p>|</p>
+                        <i class="fa fa-video-camera" aria-hidden="true"></i>
+                        <p>{{coming.genres}}</p>
+                        <p class="sipnosiscabecera">{{coming.overview}}</p>
+                        <a class="boton" (click)="moviedetail(coming.imdb_id)"><p>Watch trailer</p></a>
+                    </div>
+                    <div class="cabeceraslider" [style.background-image]="'url(' + coming.backdrop_path + ')'">
+                        <div id="grad2"></div>
+                    </div>
+                </div>    
+            </div>
+        </slide>
+        <slide>
+            <div *ngFor="let coming of filmsComing | slice:5:6 ; let i = index">
+                <div *ngIf="i < 6">
+                    <div class="titulocabecera">
+                        <h1>{{coming.title}}</h1>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <p>{{coming.vote_average}}</p>
+                        <p>|</p>
+                        <i class="fa fa-video-camera" aria-hidden="true"></i>
+                        <p>{{coming.genres}}</p>
+                        <p class="sipnosiscabecera">{{coming.overview}}</p>
+                        <a class="boton" (click)="moviedetail(coming.imdb_id)"><p>Watch trailer</p></a>
+                    </div>
+                    <div class="cabeceraslider" [style.background-image]="'url(' + coming.backdrop_path + ')'">
+                        <div id="grad2"></div>
+                    </div>
+                </div>    
+            </div>
+        </slide>
+    </carousel>
+</header>
+<section>
+    <div class="resultados">
+		<h1>New Movies Releases</h1>
+	</div>
+    <hr>
+    <div class="lista">
+        <a *ngFor="let film of filmsPlaying" (click)="moviedetail(film.imdb_id)" class="peli">
+            <div class="nota">
+                <div class="circulo">
+                    <p>{{film.vote_average}}</p>
+                </div>
+                <img src="{{film.poster_path}}">
+            </div>
+            <div class="titulo">
+                <p>{{film.title}}</p>
+                <div class="generos">
+                    <p>{{film.genres}}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>

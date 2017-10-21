@@ -1,0 +1,27 @@
+<header class="cabecera" [style.background-image]="'url(' + photo + ')'">
+    <div id="grad1"></div>
+</header>
+<section>
+	<div class="resultados">
+		<h1>searched word: <span>"{{film}}"</span></h1>
+		<p>Have been found <span>{{films.length}} results</span>.</p>
+	</div>
+	<hr>
+	<div class="lista">
+        <a *ngFor="let film of films" [routerLink]="['/detail', film.imdb_id]" class="peli">
+            <div class="nota">
+                <div class="circulo">
+                    <p>{{film.vote_average}}</p>
+                </div>
+                <img src="{{film.poster_path}}">
+            </div>
+            <div class="titulo">
+                <p>{{film.title}}</p>
+                <div class="generos">
+                    <p>{{film.genres}}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <hr>
+</section>

@@ -1,0 +1,70 @@
+<div class="cabecera" [style.background-image]="'url(' + photo + ')'">
+    <div id="grad1"></div>
+</div>
+
+<section>
+    <div class="titulopeli">
+        <h1>{{film.title}}</h1><h2>{{votes.Year}}</h2>
+    </div>
+    <div class="flex-container ficha">
+        <div class="col-dos">
+            <div class="poster">
+                <img src="http://image.tmdb.org/t/p/w300{{film.poster_path}}">
+            </div>
+            <div>
+            <a href="{{film.homepage}}"><div class="boton"><p>Website</p></div></a>
+            </div>
+        </div>
+
+        <div class="col-diez">
+            <div class="datos">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                <p>{{votes.Runtime}}</p>
+                <p>|</p>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <p>{{film.vote_average}}</p>
+                <p>|</p>
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <p>{{votes.Released}}</p>
+                <p>|</p>
+                <i class="fa fa-video-camera" aria-hidden="true"></i>
+                <p>{{votes.Genre}}</p>
+            </div>
+            <div class="datos">
+                <h2>Storyline</h2>
+                <p>{{film.overview}}</p>
+            </div>
+            <div class="flex-container datos">
+                <div class="col-seis">
+                    <h2>Trailer</h2>
+                    <iframe frameborder="0" [src]="sanitizer.bypassSecurityTrustResourceUrl(videoUrl)" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+                <div class="col-cuatro">
+                    <h2>Details</h2>
+                    <h3>Director:</h3><p>{{votes.Director}}.</p><br>
+                    <h3>Actors:</h3><p>{{votes.Actors}}.</p><br> 
+                    <h3>Writers:</h3><p>{{votes.Writer}}.</p><br>
+                    <h3>Awards:</h3><p>{{votes.Awards}}.</p><br>
+                    <h3>Production:</h3><p>{{votes.Production}}.</p><br>
+                    <h3>Country:</h3><p>{{votes.Country}}.</p><br>
+                </div>
+            </div>
+        </div>       
+    </div>
+    <div class="detalle">
+        <h2>Similar Movies</h2>
+    </div>
+            <div class="similares">
+                <div class="similar col-cinco" *ngFor="let similar of similarFilms; let i = index">
+                    <a *ngIf="i < 5" (click)="moviedetail(similar.imdb_id)">
+                        <img src={{similar.poster_path}}>
+                        <div class="titulo">
+                        <p>{{similar.title}}</p>
+                        <div class="generos">
+                            <p>{{similar.genres}}</p>
+                        </div>
+                    </div>
+                    </a>    
+                </div>
+            </div>
+</section>
