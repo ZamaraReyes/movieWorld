@@ -67,4 +67,26 @@ export class AppComponent {
       this.router.navigate(["/searchmovie", film]);
     }
   }
+
+  listmovies(listID) {
+    location.reload();
+    this.router.navigate(["/listmovies", listID]);
+  }
+  
+  genremovies(genreID) {
+    location.reload();
+    this.router.navigate(["/genre", genreID]);
+  }
+  
+  ngOnInit() {
+    this.movieService.getListGenres()
+        .then( data => {
+            this.genreFilms = data.genres;
+            console.log(data);
+            })
+         .catch(error => {
+            console.error(error);
+        })
+        
+    }
 }
