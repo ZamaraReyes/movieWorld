@@ -10,11 +10,18 @@
 }
 
 @media only screen and (max-width: 960px) {
-  
+
+    section, footer {
+        width: 100% !important;
+    }
 }
 
 
 @media only screen and (max-width: 768px) {
+
+    .cabecera, #grad1 {
+        height: 400px !important;
+    }
     
     #inicio h1 {
         text-align: center;
@@ -68,6 +75,10 @@
 }
 
 @media only screen and (max-width: 640px) {
+
+    .cabecera, #grad1 {
+        height: 300px !important;
+    }
     
     #inicio img {
         width: 80%;
@@ -90,6 +101,10 @@
 }
 
 @media only screen and (max-width: 480px) {
+
+    .cabecera, #grad1 {
+        height: 200px !important;
+    }
     
     #inicio .logo {
         padding: 220px 0;

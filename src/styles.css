@@ -74,7 +74,7 @@ footer a p {
 
 label {
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
-    background-color: rgba(31,34,38,0.8);
+    background-color: rgba(31,34,38,1);
 }
 
 label img {
@@ -587,7 +587,7 @@ iframe {
     cursor: pointer;
     padding: 15px;
     display: none;
-    z-index: 10;
+    z-index: 999;
     width: 100%;
 }
 
@@ -784,7 +784,7 @@ iframe {
 @media only screen and (max-width: 1024px) {
     
     nav {
-        padding: 4px 70px;
+        padding: 4px 30px;
     }
     
     section {
@@ -847,8 +847,9 @@ iframe {
     }
     
     .menu {
+        z-index: 99;
   		display: none;
-        background-color: rgba(31,34,38,0.8);
+        background-color: rgba(31,34,38,1);
         box-shadow: 0 6px 12px rgba(0,0,0,.175);
         border: 1px solid rgba(0,0,0,.15);
   	}

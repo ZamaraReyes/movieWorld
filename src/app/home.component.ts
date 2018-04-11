@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
                         title: data.title,
                         imdb_id: data.imdb_id,
                         poster_path: "http://image.tmdb.org/t/p/w342"+data.poster_path,
-                        backdrop_path: "http://image.tmdb.org/t/p/w1000"+data.backdrop_path, 
+                        backdrop_path: "http://image.tmdb.org/t/p/w780"+data.backdrop_path, 
                         vote_average: data.vote_average,
                         overview: data.overview
                     });
